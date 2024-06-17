@@ -39,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 
 async function keepAlive() {
   try {
-    const response = await fetch('/ping');
+    const response = await fetch('https://bhatitraders.onrender.com/ping');
     if (response.ok) {
       console.log('Server is alive:', new Date());
     } else {
