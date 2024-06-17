@@ -2,6 +2,8 @@ require('dotenv').config();
 const { log, error } = require('console');
 const express = require('express');
 const path = require('path');
+const cron=require('node-cron');
+const fetch=require('node-fetch');
 const app = express();
 const pg = require("pg");
 const postgres=require('postgres');
@@ -35,7 +37,27 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true }));
 
+async function keepAlive() {
+  try {
+    const response = await fetch('/ping');
+    if (response.ok) {
+      console.log('Server is alive:', new Date());
+    } else {
+      console.log('Server returned an error:', response.status, new Date());
+    }
+  } catch (error) {
+    console.error('Error making request:', error, new Date());
+  }
+}
 
+// Schedule the keep-alive function to run every 14 minutes
+cron.schedule('*/14 * * * *', () => {
+  console.log('Running keepAlive task:', new Date());
+  keepAlive();
+});
+
+// Initial call to keep the server alive immediately when the server starts
+keepAlive();
 
 async function stokeupdate(data) {
   try {
