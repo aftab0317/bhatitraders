@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: black;
+    margin: 0;
+    background-color: #78ABA8;
+    padding: 1%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+/* p {
+    margin-bottom: 1rem;
+} */
+
+p.navbar-brand {
+    color: "black";
+    color: black;
+    font-size: 2.5rem;
+}
+
+li>a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.7rem;
+    background-color: #80B9AD;
+    margin-right: 3px;
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+    background-color: #C8CFA0;
+    color: white;
+    font-weight: 400;
+    /* background: #AAD7D9; */
+}
+
+.navbar-nav li a:hover {
+    color: #f7f7f7;
+    background-color: #FA7070;
+}
+
+.container {
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.item {
+    flex: 1 1 calc(40% - 20px);
+    /* Adjusted to consider margin */
+    margin: 10px;
+    /* background-color: dodgerblue; */
+    /* color: white; */
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-boxS;
+    color: white;
+    font-weight: 600;
+}
+
+
+@media print {
+    /* All your print styles go here */
+
+    #fullbillpage {
+        border: 2px solid black;
+        width: 900px;
+        margin-left: 5%;
+        padding: 2%;
+    }
+    .homebtn{
+        display: none !important;
+    }
+    
+    #nav {
+        display: none !important;
+    }
+    .pbtn{
+       display: none;
+    }
+   
+    #stamp{
+        position: relative;
+        left: 700px ;
+    }
+    div>#bar1{
+        display: block;
+    }
+    #print_external {
+        display: none;
+    }
+   
+}
+
+#fullbillpage {
+    border: 2px solid black;
+    width: 900px;
+    margin-left: 5%;
+    padding: 2%;
+}
+.hrtag{
+border-color: black;}
+
+.billh {
+    position: relative;
+    left: 600px;
+}
+
+input,
+textarea {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    color: black;
+}
+#customerinfo{
+    border-top:2px solid black ;
+    font-variant-caps: all-petite-caps;
+}
+.billinput {
+    width: 950px;
+}
+
+.id {
+    width: 70px;
+    /* color: black; */
+    margin-right: 0;
+    margin-left: 2px;
+
+
+}
+
+.editinput {
+    width: 100px;
+    margin-left: 2px;
+
+}
+
+.submitinput {
+    position: absolute;
+    top: 30px;
+    background-color: darkslateblue;
+    color: #f7f7f7;
+    font-size: 2rem;
+
+    width: 200px;
+    margin-left: 2px;
+    /* color: white; */
+    font-weight: 500;
+    /* background-color: #04ff00fd; */
+}
+
+#Cancel {
+    position: absolute;
+    text-align: center;
+    display: none;
+    top: 30px;
+    left: 300px;
+    background-color: red;
+    color: #f7f7f7;
+    font-size: 2rem;
+    width: 200px;
+    margin-left: 2px;
+
+}
+
+.billopen {
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    margin-left: 2px;
+    color: white;
+    background-color: #00e1ff;
+}
+
+
+.billdelete {
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    margin-left: 2px;
+    color: rgb(255, 255, 255);
+    background-color: #ff0000;
+
+}
+
+#billbody{
+    display: flex;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+
+}
+
+.btn {
+    position: relative;
+    left: 70%;
+    width: 200px;
+    padding: 1%;
+    bottom: 70px;
+    font-size: 2rem;
+    /* margin-top: 20px; */
+
+}
+
+#finalsub {
+    left: 700px;
+    top: 50px;
+    background-color: #0056b3;
+}
+
+.button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* styles.css */
+
+#sub{
+    bottom: 5px;
+}
+
+
+.search-container {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dropdown {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+    /* Hidden by default */
+    color: black;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+div.item1{
+    border:2px solid black ;
+    width: 700px;
+    height: 400px;
+}
+div.item2{
+    border:2px solid black ;
+    border-left: none;
+    border-right: none;
+width: 140px;
+}
+div.item3{
+    border:2px solid black ;
+
+width: 260px;
+}
+#billfooter{
+    display: inline-flex;
+    border: 2px solid black;
+    justify-content: space-around;
+    border-top: none;
+    /* margin-top: 5px; */
+    /* padding: 1%; */
+    /* text-align: center; */
+}
+#billfooter>.cash{
+    width: 573px;   
+    border-right: 2px solid black;
+    margin-bottom:0 ;
+    padding: 1%;
+}
+#billfooter>.totalamount{
+    width: 100px;
+    margin-bottom:0 ;
+    padding: 1%;
+    padding-right: 8px;
+}
+#gst{
+    border-top: 2px solid black;
+    width: 315px;
+    position: relative;
+    left :572px;
+    /* height: 50px; */
+    bottom:  142px;
+    padding: 5px;
+    /* display: flex; */
+    /* flex-direction: column; */
+   
+}
+/* #bar{
+    background-color: black;
+    height: 135px;
+    width: 2px;
+    position: relative;
+    left: 750px;
+    bottom:  333px;
+} */
+#bar1{
+    background-color: black;
+    height: 46px;
+    width: 2px;
+    position: relative;
+    left: 685px;
+    bottom: 198px;
+
+}
+/* #termsndcondition{
+    position: relative ;
+    bottom: 180px;
+    padding: 16px;
+} */
+ .pbtn{
+    background-color: #ff0000;
+    color: white;
+    left:1050px;
+    bottom:  1000px;
+ }
+ .csinfo{
+    display: inline-flex;
+    align-content: space-evenly;
+ }
+ .flex-item {
+    width: 300px;
+    /* background-color: lightgray; */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .inline-text {
+    display: flex;
+    gap: 90px; /* Gap between inline paragraphs */
+  }
+  .inline-text.price{
+    flex: 1;
+margin-bottom: 5px;
+ }
+ .tamt{
+    /* margin-left: 20px; */
+    padding: 1%;
+    padding-right: 87px;
+    padding-left: 48px;
+    border-left: 2px solid;
+ }
+ .csinfo>h3{
+    margin-right: 75px;
+    margin-bottom: 0;
+    /* padding: 1%; */
+ }
+ h3.pbildate{
+margin-left: 450px;
+ }
+ h3.pcsname{
+    margin-right: 10px;
+ }
+
+ .homebtn{
+
+    background-color: #1900ffb7;
+    color: white;
+    left:900px;
+    bottom:  900px;
+    text-decoration-line: none;
+    padding: 2%;
+    border-radius: 25%;
+ }
+ #termsndcondition{
+    margin-bottom: 50px;
+    margin-top: 0px;
+}
+.item1>p {
+    padding: 10px;
+    margin-right: 200px;
+    margin-top: 5px;
+}
+.item2>p {
+    padding: 10px;
+}
+.item3>p {
+    padding: 10px;
+}
+
+#sr .container {
+    display: flex;
+    justify-content: space-between; /* Ensures space between the boxes */
+    margin-top: 100px;
+}
+#sr .box {
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    /* background-color: rgb(0, 10, 14); You can change the color */
+    border: 1px solid #000; /* Optional: Add a border */
+}
+.searchicon{
+    width: 200px;
+    margin-top: 30px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.allstock{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.stockinput{
+    width: 250px;
+}
+#totalNo{
+    width: 50px;
+    margin-top: 5px;
+}

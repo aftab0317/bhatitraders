@@ -1,0 +1,55 @@
+<%- include("partials/header") -%>
+<form id="formpg" action="/update" method="post">
+<div class="container">
+        <div class="item">
+        <label>Customer name</label>
+        <input type="text" name="customername"  value="<%=data.customername %>" placeholder="Enter Customer name">
+        </div>
+<div class="item">
+        <label> Address </label>
+        <input type="text" name="" value="<%=data.address %>"  autofocus placeholder="Enter Address">
+    </div>
+    <div class="item">
+        <label> Mobile No </label>
+        <input type="number" min="10" value="<%= data.mobileno %>"  name="mobileno" autofocus placeholder="Enter mobile no">
+        </div>
+        <div class="item">
+        <label> IMEI NO </label>
+        <input type="text" name="imei" value="<%= data.imei %>" autofocus placeholder="Enter Imei No"></div>
+    <div class="item">
+
+<label> Amount </label>
+<input type="text" name="amount" value="<%= data.amount %>" autofocus placeholder="Enter Amount">
+</div>
+<div class="item">
+
+<label> Date </label>
+<input type="text" name="date" value="<%= data.billdate %>" autofocus placeholder="Enter Date">
+</div>
+
+        <div class="item">
+        <div class="search-container">
+            <h2>Select Mobile</h2>
+            <input type="text" name="device" value="<%= data.mobilebrand %> , <%=data.mobilename %>, <%= data.varient%>,<%=data.color%>" id="search" placeholder="Search..." autocomplete="off">
+            <div id="dropdown" class="dropdown">
+                <!-- Suggestions will be inserted here -->
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <label> Mobileid</label>
+                <input type="mobileid"  id="mobileid" name="mobileid" autofocus placeholder="Mobileid" value="<%=data.mobileid %>" disabled>
+                </div>
+    
+
+    </div>
+
+<button type="submit" class="btn btn-success btn-lg" >Update</button>
+      </form>
+    
+
+
+
+<!-- <script src="/script.js"></script> -->
+
+<%- include("partials/footer") -%>

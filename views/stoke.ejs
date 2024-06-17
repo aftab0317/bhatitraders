@@ -1,0 +1,55 @@
+<%- include("partials/header") -%>
+<form id="formpg" action="/stockinsert" method="post">
+<div class="container">
+        <!-- <div class="item"> -->
+        <!-- <label>Mobile Id</label>
+        <input type="text" name="mobileid"   placeholder="Enter Mobileid">
+        </div> -->
+<div class="item">
+        <label> Mobile Brand </label>
+        <input type="text" name="Mobilebrand" autocomplete="off" autofocus placeholder="Enter Brand name" required>
+    </div>
+    <div class="item">
+        <label> Mobile Model </label>
+        <input type="text" autocomplete="off"   name="mobilename" autofocus placeholder="Enter mobile Model" required>
+        </div>
+        <div class="item">
+        <label> Varient </label>
+        <input type="text" name="varient" autocomplete="off" autofocus placeholder="Enter Varient" required></div>
+    <div class="item">
+
+<label> Color </label>
+<input type="text" name="Color" autocomplete="off"  autofocus placeholder="Enter Color" required>
+</div>
+<!-- <div class="item">
+
+<label> Quentity </label>
+<input type="text" name="qty"  autofocus placeholder="Enter qty...." required>
+</div> -->
+    </div>
+
+    <button id="finalsub" type="submit" style="display: none;" class="btn btn-success btn-lg" >Confirm Submit</button>
+      </form>
+    
+      <button id="sub"   class="btn btn-success btn-lg" >Submit</button>
+
+
+<!-- <script src="/script.js"></script> -->
+
+</body>
+
+<script >
+   const submit = document.getElementById('sub');
+    const fsubmit = document.getElementById('finalsub');
+
+
+  submit.addEventListener("click",()=>{
+fsubmit.style.display="block";
+
+  });
+
+
+</script>
+<script src="/script.js"></script>
+
+</html>

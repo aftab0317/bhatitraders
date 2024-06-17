@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhati Traders
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="fullbillpage">
+<div class="billheading">
+    <h1 class="billh">BHATI TRADERS</h1>
+    <div>
+        <p>GSTIN-23CBLPA2289R1Z6</p>
+        <p>Mobile NO : <span>9303761837</span></p>
+        <p>44,Station Road OPP. Okhali Restaurant Ratlam (M.P)</p>
+        </div>
+        </div>
+        <div id="customerinfo">
+            <div class="csinfo">
+            <h3>invoice No : <%= d.id %> </h3> 
+        <h3  class="pbildate">Date :  <%=d.billdate %> </h3>
+    </div class="csinfo">
+        <hr class="hrtag">
+        <div class="csinfo">
+        <h3 class="pcsname"> Customer name   :  </h3><h3><%= d.customername %> </h3> </div><hr class="hrtag">
+        <div class="csinfo">
+        <h3>Address :  </h3> <h3> <%= d.address %>   </h3> </div><hr class="hrtag">
+        <div class="csinfo">
+        <h3>mobile no :  </h3><h3><%= d.mobileno %></h3></div>
+        </div>
+        <div id="billbody">
+            
+            <div class="item1"> Particulars<hr class="hrtag"> <p> MobileName : <%=locals.mobile.brandname %></p>
+            
+            <p> Modal : <%= locals.mobile.model %></p>
+            <p> varient : <%= locals.mobile.varient %></p>
+            <p> Color : <%= locals.mobile.color %></p>
+            <p> imei : <%= d.imei %></p>
+
+
+            
+            </div>
+            <div class="item2"> Qty<hr class="hrtag"> <p>01</p></div>
+            <div class="item3"> Amount<hr class="hrtag"> <p><%=baseprice.toFixed(2) %> </p></div>
+            </div>
+            <div id="billfooter">
+                <p class="cash">Cash /Credit/Chaq</p>
+                <P class="totalamount"> Total Amount </p>
+            <p class="tamt"> <%=gst.totalWithinState.toFixed(2)%> </p>
+            </div>
+            <div id="gst">
+                
+                <div class="flex-item">
+                    <div class="inline-text">
+                        <p class="pirce"> CGST     </p> <p class="pirce"> <%=     gst.cgst.toFixed(2) %> </p>
+                    </div>
+                  </div>
+                  <hr class="hrtag">
+                  <div class="flex-item">
+                    <div class="inline-text">
+                        <p class="pirce">SGST </p><p class="pirce"><%=       gst.sgst.toFixed(2) %></p>
+                    </div>
+                  </div>
+                 
+                
+            
+           
+       </div>
+        <!-- <div id="bar"></div>
+        <div id="bar1"></div> -->
+
+            <div id="termsndcondition">
+                <h2> Terms & Condition</h2>
+              <ul>
+                <li> बैटरी चार्जर की वारंटी 6 महीने व मोबाइल की 1 साल की रहेगी </li>
+                <li>पानी में गिरने या कोई अन्य टूट फुट वारंटी नहीं मिलेगी </li>
+                <li>पानी में गिरने या कोई अन्य टूट फुट वारंटी नहीं मिलेगी </li>
+                <li>पानी में गिरने या कोई अन्य टूट फुट वारंटी नहीं मिलेगी </li>
+                <li>वारंटी सर्विस सबंधित कंपनी के नियमानुसार समस्त समस्या का निवारण रतलाम रहेगा </li>
+
+              </ul>
+            </div>
+
+            <div id="stamp">
+                <h3>for bhati Traders</h3>
+            </div>
+        
+    <div>
+
+    </div>
+    
+    </div>
+    <button id="print_external" class="pbtn btn">Print Bill</button>
+    <!-- <a class="homebtn btn" href="/">Home</a> -->
+    <a class="homebtn btn" href="/bills">Back</a>
+
+
+    
+</body>
+<script>
+    function setPrint() {
+  const closePrint = () => {
+    document.body.removeChild(this);
+  };
+  this.contentWindow.onbeforeunload = closePrint;
+  this.contentWindow.onafterprint = closePrint;
+  this.contentWindow.print();
+}
+
+document.getElementById("print_external").addEventListener("click", () => {
+  const hideFrame = document.createElement("iframe");
+  hideFrame.onload = setPrint;
+  hideFrame.style.display = "none"; // hide iframe
+  hideFrame.src = "/billupload";
+  document.body.appendChild(hideFrame);
+});
+
+</script>
+</html>

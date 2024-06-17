@@ -1,0 +1,62 @@
+<%- include("partials/header") -%>
+<form id="formpg" action="/S/<%= action %>" method="post">
+<div class="container">
+        <!-- <div class="item"> -->
+        <!-- <label>Mobile Id</label>
+        <input type="text" name="mobileid"   placeholder="Enter Mobileid">
+
+        </div> -->
+        <div class="item">
+            <label> Mobile ID </label>
+            <input type="text" name="id" autocomplete="off" value="<%= data.id %>" placeholder="Enter Brand name" readonly>
+        </div>
+<div class="item">
+        <label> Mobile Brand </label>
+        <input type="text" name="mobilebrand" autocomplete="off" value="<%= data.mobilebrand %>" placeholder="Enter Brand name" required>
+    </div>
+    <div class="item">
+        <label> Mobile Model </label>
+        <input type="text" autocomplete="off"   name="mobilename" value="<%= data.mobilename %>" autofocus placeholder="Enter mobile Model" required>
+        </div>
+        <div class="item">
+        <label> Varient </label>
+        <input type="text" name="varient" autocomplete="off" value="<%=data.varient %>"  autofocus placeholder="Enter Varient" required></div>
+    <div class="item">
+
+<label> Color </label>
+<input type="text" name="color" autocomplete="off" value="<%=data.color %>" autofocus placeholder="Enter Color" required>
+</div>
+<!-- <div class="item">
+
+<label> Quentity </label>
+<input type="text" name="qty"  autofocus placeholder="Enter qty...." required>
+</div> -->
+    </div>
+
+    <button id="finalsub" type="submit" style="display: none;" class="btn <%= btn %> btn-lg" >Confirm Submit</button>
+      </form>
+    
+      <button id="sub"   class="btn <%=btn %> btn-lg" ><%= action %></button>
+
+      <a id="sub" href="/allstock" class="btn btn-warning btn-lg" > Back</a>
+
+
+<!-- <script src="/script.js"></script> -->
+
+</body>
+
+<script >
+   const submit = document.getElementById('sub');
+    const fsubmit = document.getElementById('finalsub');
+
+
+  submit.addEventListener("click",()=>{
+fsubmit.style.display="block";
+
+  });
+
+
+</script>
+<script src="/script.js"></script>
+
+</html>

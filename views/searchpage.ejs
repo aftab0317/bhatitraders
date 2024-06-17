@@ -1,0 +1,57 @@
+<%- include("partials/header") -%>
+<form method="post" action="/search/<%=w%>">
+
+    <hr class="hrtag ">
+
+<label> Type query</label>
+<input  id="Searchinput" name="searchedtext" autocomplete="off" placeholder="<%= value %>" required>
+<button type="submit" class="btn-primary btn-lg" >SEARCH </button>
+
+
+<hr class="hrtag ">
+
+</form>
+<div id="contentbody"> 
+    <div class="update "> 
+<% if(word) { %>
+    <input id="totalNo" name="totalno" value="<%= total %>" readonly>
+
+        <% data.forEach((i)=>{ %>
+         
+            <div class="item">
+              
+                    <input name="id" class="id" value=" <%=i.id %>" readonly  />
+        <!-- <input  class="editinput" id="editinput" value="Edit" readonly /> -->
+        <input class="billinput" id="billinput" type="text" Name="input"  value="<%=i.customername %> , <%= i.mobileno %> , <%= i.address %> ,<%= i.imei %> ,<%=i.amount %>,<%= i.billdate %>, <%=i.device %>" disabled>  <a class="billopen" href="/update/<%=i.id%>">UPDATE</a> <a class="billdelete" href="/delete/<%=i.id%>">DELETE</a> <a class="billopen" href="/billopen/<%=i.id%>">Open</a>
+        <input id="submitinput" style="display: none;" class="submitinput" type="Submit" value="Submit"  /> 
+        <!-- <input id="Cancel" value="Cancel" readonly>    -->
+
+    </div>
+    
+    
+       <% }) %>
+       <% }else { %>
+        <input id="totalNo" name="totalno" value="<%= total2 %>" readonly>
+<div class="allstock "> 
+
+    <% data1.forEach((i)=>{ %>
+        <div class="item">
+     
+                <input name="id" class="id" value=" <%=i.id %>" readonly  />
+    <input class="stockinput" id="billinput" type="text" Name="input"  value="<%=i.mobilebrand.trim() %> , <%= i.mobilename %> , <%= i.varient %> ,<%= i.color %> " disabled>  <a class="billopen" href="/supdate/<%=i.id%>">UPDATE</a> <a class="billdelete" href="/sdelete/<%=i.id%>">DELETE</a>
+
+</div>
+
+
+   <% }) %>
+
+</div>
+
+        <% } %>
+
+    
+    </div>
+
+</div>
+
+<%- include("partials/footer") -%>

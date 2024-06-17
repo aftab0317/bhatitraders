@@ -1,0 +1,25 @@
+<%- include("partials/header") -%>
+<input id="totalNo" name="totalno" value="<%= total %>" readonly>
+<div class="allstock "> 
+
+    <% data.forEach((i)=>{ %>
+        <div class="item">
+                <input name="id" class="id" value=" <%=i.id %>" readonly  />
+    <input class="stockinput" id="billinput" type="text" Name="input"  value="<%=i.mobilebrand.trim() %> , <%= i.mobilename %> , <%= i.varient %> ,<%= i.color %> " disabled>  <a class="billopen" href="/supdate/<%=i.id%>">UPDATE</a> <a class="billdelete" href="/sdelete/<%=i.id%>">DELETE</a>
+
+</div>
+
+
+   <% }) %>
+
+</div>
+
+</body>
+<footer>
+    
+</footer>
+<script >
+   
+</script>
+</html>
+
