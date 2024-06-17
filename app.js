@@ -373,7 +373,10 @@ orignalbaseprice=basePrice;
 
   }
 })
+app.get("/ping",  (req, res) => {
+res.send('pong');
 
+});
 app.get("/search",(req,res)=>{
 
   res.render('search.ejs')
