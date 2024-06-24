@@ -68,6 +68,20 @@ li>a {
 
 }
 
+.update{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap
+}
+.update>.item{
+    /* position: absolute; */
+    /* background-color: white;
+     */
+     /* height: 60px; */
+     text-align: left;
+     margin: 0%;
+}
 .item {
     flex: 1 1 calc(40% - 20px);
     /* Adjusted to consider margin */
@@ -120,6 +134,7 @@ li>a {
     width: 900px;
     margin-left: 5%;
     padding: 2%;
+    background-color: aliceblue;
 }
 .hrtag{
 border-color: black;}
@@ -145,7 +160,7 @@ textarea {
     font-variant-caps: all-petite-caps;
 }
 .billinput {
-    width: 950px;
+    width: 70%;
 }
 
 .id {
@@ -195,12 +210,23 @@ textarea {
     width: 100px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 5px;
     font-size: 1.5rem;
     margin-left: 2px;
-    color: white;
-    background-color: #00e1ff;
+    color:black;
+    background-color: yellow;
+}
+.billopenp {
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    font-size: 1.5rem;
+    margin-left: 2px;
+    color:rgb(255, 255, 255);
+    background-color: grey;
 }
 
 
@@ -248,8 +274,7 @@ textarea:focus {
 }
 
 #finalsub {
-    left: 700px;
-    top: 50px;
+    left: 60%;
     background-color: #0056b3;
 }
 
@@ -390,6 +415,7 @@ width: 260px;
     color: white;
     left:1050px;
     bottom:  1000px;
+    border-radius: 54px;
  }
  .csinfo{
     display: inline-flex;
@@ -484,6 +510,6 @@ a{
     width: 250px;
 }
 #totalNo{
-    width: 50px;
+    width: 120px;
     margin-top: 5px;
 }
