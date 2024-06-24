@@ -4,10 +4,11 @@ const express = require('express');
 const path = require('path');
 const cron=require('node-cron');
 const fetch=require('node-fetch');
+
 const app = express();
 const pg = require("pg");
 const postgres=require('postgres');
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 let stoke = [];
 let bills = []
 let gstRate = 18;
@@ -36,7 +37,6 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.use(express.urlencoded({ extended: true }));
-
 async function keepAlive() {
   try {
     const response = await fetch('https://bhatitraders.onrender.com/ping');
@@ -58,6 +58,8 @@ cron.schedule('*/14 * * * *', () => {
 
 // Initial call to keep the server alive immediately when the server starts
 keepAlive();
+
+
 
 async function stokeupdate(data) {
   try {
@@ -198,6 +200,9 @@ app.get("/", async (req, res) => {
   res.render('billpage.ejs');
 
 
+});
+app.get("/ping",(req,res)=>{
+  res.send('pong');
 });
 
 app.get("/suggest", async (req, res) => {
@@ -372,11 +377,8 @@ orignalbaseprice=basePrice;
     res.redirect('/bills')
 
   }
-});
-app.get("/ping",  (req, res) => {
-res.send("pong");
+})
 
-});
 app.get("/search",(req,res)=>{
 
   res.render('search.ejs')
