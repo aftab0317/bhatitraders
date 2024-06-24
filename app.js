@@ -372,9 +372,9 @@ orignalbaseprice=basePrice;
     res.redirect('/bills')
 
   }
-})
+});
 app.get("/ping",  (req, res) => {
-res.send('pong');
+res.send("pong");
 
 });
 app.get("/search",(req,res)=>{
